@@ -21,6 +21,7 @@ Then I take a screenshot in the second device
 When I open the notification message to read the chat message in the second device
 Then I should see the message 'first joyn chat message' in the second device
 Then I send 'first joyn chat message ack'as a response in the second device
+Then I wait to see the ack sign in the second device
 Then I take a screenshot in the second device
 
 Then I wait to see message 'first joyn chat message ack' in the first device

@@ -113,6 +113,9 @@ end
 end 
 
 
+
+
+
 When /^I wait to see the Joyn Chat Notification message in the second device$/ do
 $device=2
 count = 1
@@ -155,6 +158,36 @@ performAction('click_on_view_by_id','chat_send_button')
 setKPIIdentifier()
 $startTime = Time.now.to_f
 end
+
+Then /^I wait to see the ack sign in the second device$/ d0
+$device=2
+ begin
+
+count = 1
+info1 = 'NOT'
+until info1.include?'FOUND'
+    puts info1
+    r = performAction('isJoynCheckBoxPresent')
+    info = r["bonusInformation"]
+    if info != nil then
+        info1 = info.to_s
+    end
+
+    timeoutInSec=20
+    unitInSec=10
+    sleep(1.0/unitInSec)
+    if count >= (timeoutInSec*unitInSec)
+        puts 'Joyn chat message delivery notification did not recived in 20 seconds'
+        performAction('time_out_exit',1)
+		exit
+    else
+        count = count + 1
+    end
+
+end
+puts info1
+end
+end 
 
 
 Then /^I wait to see message '(.*)' in the first device$/ do |message4|
