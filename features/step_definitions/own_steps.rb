@@ -159,7 +159,7 @@ setKPIIdentifier()
 $startTime = Time.now.to_f
 end
 
-Then /^I wait to see the ack sign in the second device$/ d0
+Then /^I wait to see the ack sign in the second device$/ do
 $device=2
  begin
 
