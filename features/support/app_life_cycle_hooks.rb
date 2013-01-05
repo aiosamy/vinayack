@@ -10,6 +10,9 @@ end
 
 After do |scenario|
   if scenario.failed?
+  $device=1
+    screenshot_embed
+	$device=2
     screenshot_embed
   end
   shutdown_test_server
