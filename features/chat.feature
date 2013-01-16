@@ -14,7 +14,6 @@ Then I take a screenshot in the second device
 When I see the contact 'TestDevice2' in joyn contacts list of the first device
 Then I send a chat message 'first joyn chat message' to the contact 'TestDevice2'
 Then I take a screenshot in the first device
-Then I wait to see the ack sign
 
 When I wait to see the Joyn Chat Notification message in the second device
 Then I take a screenshot in the second device
